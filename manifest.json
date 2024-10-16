@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "OF Spend calculator",
+  "name": "MoneyFans: OF money tracker",
   "version": "1.0",
   "description": "See how bad your habit really is... Filter by model, or grab a gross total...",
-  "permissions": ["activeTab"],
+  "permissions": ["https://onlyfans.com/*"],
   "icons": {
     "16": "icon.png",
     "48": "icon.png",
