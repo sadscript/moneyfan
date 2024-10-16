@@ -1,21 +1,20 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "MoneyFans: OF money tracker",
   "version": "1.0",
   "description": "See how bad your habit really is... Filter by model, or grab a gross total...",
-  "permissions": ["https://onlyfans.com/*"],
+  "host_permissions": [
+    "https://onlyfans.com/*"
+  ],
+  "permissions": [
+    "activeTab"
+  ],
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "moneyfans@github.com",
-      "strict_min_version": "129.0"
-    }
-  },  
-  "browser_action": {
+  "action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
@@ -25,8 +24,17 @@
       "js": ["content.js"]
     }
   ],
-  "web_accessible_resources": [
-    "query.js",
-    "scroll.js"
-  ]
+  "web_accessible_resources": [{
+    "resources": ["query.js", "scroll.js"],
+    "matches": ["https://onlyfans.com/*"]
+  }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "moneyfans@github.com",
+      "strict_min_version": "109.0"
+    }
+  }
 }
