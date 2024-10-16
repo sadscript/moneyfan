@@ -1,6 +1,8 @@
 // Function to search for a string in any anchor tag within the 3rd TD of each row,
 // check SVG class, sum dollar values for passing entries, and display individual amounts
 function searchTableRows(searchString) {
+    // Convert searchString to lowercase for case-insensitive search
+    searchString = searchString.toLowerCase();
     // Get all table rows
     const rows = document.querySelectorAll('tr');
     let totalPassValue = 0;
@@ -18,7 +20,7 @@ function searchTableRows(searchString) {
             
             // Check all anchor tags for the search string
             const matchingAnchor = Array.from(anchors).find(anchor => 
-                anchor.textContent.includes(searchString)
+                anchor.textContent.toLowerCase().includes(searchString.toLowerCase())
             );
             
             if (matchingAnchor) {
