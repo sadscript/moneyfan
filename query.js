@@ -65,10 +65,12 @@ function searchTableRows(searchString = '') {
         console.log(`Total passing entries: ${passCount}`);
         console.log(`Total value of passing entries: $${totalPassValue.toFixed(2)}`);
     } else {
-        console.log(`\nTotals for each unique anchor text:`);
-        Object.entries(groupTotals).forEach(([text, total]) => {
-            console.log(`${text}: $${total.toFixed(2)}`);
-        });
+        console.log(`\nTotals for each unique anchor text (sorted by value):`);
+        Object.entries(groupTotals)
+            .sort((a, b) => b[1] - a[1])  // Sort in descending order
+            .forEach(([text, total]) => {
+                console.log(`${text}: $${total.toFixed(2)}`);
+            });
     }
 
     window.postMessage({ type: "FROM_PAGE", totalValue: totalPassValue.toFixed(2) }, "*");
