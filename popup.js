@@ -1,5 +1,5 @@
 document.getElementById('billingPage').addEventListener('click', () => {
-  chrome.tabs.update({url: 'YOUR_BILLING_PAGE_URL'});
+  chrome.tabs.update({url: 'https://onlyfans.com/my/payments/list?type=all'});
 });
 
 document.getElementById('scrollBottom').addEventListener('click', () => {
