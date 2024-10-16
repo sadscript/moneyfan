@@ -27,11 +27,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         '</ul>';
       top5Container.style.display = 'block';
       document.body.style.height = 'auto';  // Allow popup to expand
-      document.body.style.width = '400px';  // Make popup wider
     } else {
       top5Container.style.display = 'none';
       document.body.style.height = '';  // Reset to default
-      document.body.style.width = '';   // Reset to default
     }
   }
 });

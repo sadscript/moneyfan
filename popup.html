@@ -5,13 +5,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <style>
-    body { width: 300px; padding: 10px 10px 0px 10px; font-family: Roboto, sans-serif; }
+    body { 
+      width: 300px; 
+      padding: 10px; 
+      font-family: Roboto, sans-serif;
+      box-sizing: border-box;
+    }
     button { 
       margin: 5px 0; 
       width: 100%; 
       background-color: #00AFF0; 
       border: none; 
-      padding: 15px 0px 15px 0px; 
+      padding: 15px 0; 
       color: white;
       border-radius: 25px; 
       font-weight: 500;
@@ -19,13 +24,39 @@
       text-transform: uppercase;
       cursor: pointer;
     }
-    button:hover { background-color: #008ccf;}
-    input { margin: 5px 0; width: 97%; border-radius: 25px; padding: 15px 0px 15px 0px; text-align: center; border: 3px solid #00AFF0}
-    input:focus { outline: none; border: 3px solid #008ccf}
+    button:hover { background-color: #008ccf; }
+    input { 
+      margin: 5px 0; 
+      width: 100%; 
+      border-radius: 25px; 
+      padding: 15px 0; 
+      text-align: center; 
+      border: 3px solid #00AFF0;
+      box-sizing: border-box;
+    }
+    input:focus { outline: none; border: 3px solid #008ccf; }
     #intro { font-weight: bold; }
-    #tip { font-style: italic;}
-    #grand { text-transform: uppercase; text-align: center; color: #00AFF0; font-weight: 500; margin-bottom: 5px; padding-bottom: 5px;}
-    u {  text-decoration-color: #00AFF0; }
+    #tip { font-style: italic; }
+    #grand { 
+      text-transform: uppercase; 
+      text-align: center; 
+      color: #00AFF0; 
+      font-weight: 500; 
+      margin-bottom: 5px; 
+      padding-bottom: 5px;
+    }
+    u { text-decoration-color: #00AFF0; }
+    #top5Models {
+      margin-top: 10px;
+    }
+    #top5Models h3 {
+      margin-top: 0;
+      color: #00AFF0;
+    }
+    #top5Models ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
   </style>
 </head>
 <body>
