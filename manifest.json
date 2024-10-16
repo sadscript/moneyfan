@@ -4,7 +4,13 @@
   "version": "1.0",
   "description": "See how bad your habit really is... Filter by model, or grab a gross total...",
   "permissions": ["activeTab"],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
   "browser_action": {
+    "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
   "content_scripts": [
