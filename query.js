@@ -44,11 +44,13 @@ function searchTableRows(searchString) {
                         if (!isNaN(dollarValue)) {
                             totalPassValue += dollarValue;
                         }
+                        console.log(`%cMatch found in row ${index + 1}: ${status} - ${matchingAnchor.textContent} - $${dollarValue.toFixed(2)}`, 'color: green; font-weight: bold;');
                     } else if (svg.classList.contains('m-danger')) {
                         status = 'Declined';
+                        console.log(`%cMatch found in row ${index + 1}: ${status} - ${matchingAnchor.textContent} - $${dollarValue.toFixed(2)}`, 'color: red; font-weight: bold;');
+                    } else {
+                        console.log(`Match found in row ${index + 1}: ${status} - ${matchingAnchor.textContent} - $${dollarValue.toFixed(2)}`);
                     }
-                    
-                    console.log(`Match found in row ${index + 1}: ${status} - ${matchingAnchor.textContent} - $${dollarValue.toFixed(2)}`);
                     // You can perform additional actions here, like highlighting the row
                 } else {
                     console.log(`Match found in row ${index + 1}, but no SVG found: ${matchingAnchor.textContent}`);
