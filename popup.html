@@ -20,19 +20,18 @@
       cursor: pointer;
     }
     input { margin: 5px 0; width: 97%; border-radius: 25px; padding: 15px 0px 15px 0px; text-align: center; border: 3px solid #00AFF0}
-    #searchTip { margin-bottom: 0px; font-size: 11.5px;}
-    #intro { font-style: italic; }
+    #intro { font-weight: bold; }
+    #tip { font-style: italic;}
     #grand { text-transform: uppercase; text-align: center; color: #00AFF0; font-weight: 500; margin-bottom: 5px; padding-bottom: 5px;}
-    h1 { text-align: center; }
+    u {  text-decoration-color: #00AFF0; }
   </style>
 </head>
 <body>
-  <img src="of.png" alt="OF Summer" style="display: block; margin: 0 auto; max-width: 95%; height: auto;">
-  <!-- <h1>OF Summer</h1> -->
-  <p id="intro">Here is a little tool to help you keep track of your spending habits. Use the buttons below in order for easiest experience.</p>
+  <img src="of2.png" alt="Money Fans" style="display: block; margin: 0 auto; max-width: 95%; height: auto;">
+  <p id="intro">1. This must be used on the billing page.<br> 2. You must scroll to the bottom of the page to <u>load *all* of your data before running.</u></p>
+  <p id="tip">Use the buttons below in order for easiest experience.</p>
   <button id="billingPage">Go to Billing</button>
   <button id="scrollBottom">Scroll to Bottom</button>
-  <!-- <p id="searchTip">Leave blank to grab grand total</p> -->
   <input type="text" id="searchInput" placeholder="Model name (leave blank for grand total)">
   <button id="runSearch">Run Search</button>
   <p id="grand">Total Amount: <span id="totalAmount">$0.00</span></p>
