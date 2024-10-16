@@ -65,7 +65,7 @@ function searchTableRows(searchString = '') {
         console.log(`Total passing entries: ${passCount}`);
         console.log(`Total value of passing entries: $${totalPassValue.toFixed(2)}`);
     } else {
-        console.log(`\nTotals for each unique anchor text (sorted by value):`);
+        console.log(`\nTotals for each unique model scraped:`);
         Object.entries(groupTotals)
             .sort((a, b) => b[1] - a[1])  // Sort in descending order
             .forEach(([text, total]) => {
