@@ -28,6 +28,10 @@ window.addEventListener("message", function(event) {
     return;
 
   if (event.data.type && (event.data.type == "FROM_PAGE")) {
-    chrome.runtime.sendMessage({action: "updateTotal", total: event.data.totalValue});
+    chrome.runtime.sendMessage({
+      action: "updateTotal", 
+      total: event.data.totalValue,
+      top5Models: event.data.top5Models
+    });
   }
 }, false);

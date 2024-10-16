@@ -66,12 +66,15 @@ function searchTableRows(searchString = '') {
         console.log(`Total value of passing entries: $${totalPassValue.toFixed(2)}`);
     } else {
         console.log(`\nTotals for each unique model scraped:`);
-        Object.entries(groupTotals)
+        let top5Models = Object.entries(groupTotals)
             .sort((a, b) => b[1] - a[1])  // Sort in descending order
-            .forEach(([text, total]) => {
-                console.log(`${text}: $${total.toFixed(2)}`);
-            });
+            .slice(0, 5)  // Get top 5
+            .map(([text, total]) => ({name: text, amount: total.toFixed(2)}));
+        
+        top5Models.forEach(model => {
+            console.log(`${model.name}: $${model.amount}`);
+        });
+        
+        window.postMessage({ type: "FROM_PAGE", totalValue: totalPassValue.toFixed(2), top5Models: top5Models }, "*");
     }
-
-    window.postMessage({ type: "FROM_PAGE", totalValue: totalPassValue.toFixed(2) }, "*");
 }

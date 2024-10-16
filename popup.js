@@ -19,5 +19,19 @@ document.getElementById('runSearch').addEventListener('click', () => {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "updateTotal") {
     document.getElementById('totalAmount').textContent = `$${request.total}`;
+    
+    const top5Container = document.getElementById('top5Models');
+    if (request.top5Models) {
+      top5Container.innerHTML = '<h3>Top 5 Models</h3><ul>' + 
+        request.top5Models.map(model => `<li>${model.name}: $${model.amount}</li>`).join('') +
+        '</ul>';
+      top5Container.style.display = 'block';
+      document.body.style.height = 'auto';  // Allow popup to expand
+      document.body.style.width = '400px';  // Make popup wider
+    } else {
+      top5Container.style.display = 'none';
+      document.body.style.height = '';  // Reset to default
+      document.body.style.width = '';   // Reset to default
+    }
   }
 });
