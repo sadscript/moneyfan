@@ -5,6 +5,12 @@ You will need to scroll to the bottom of the billing page before running to ensu
 The search will return partial results if any match (ie. search for "ang" will match "Angela", "angelo", "Angelina", and so on)  
 You can open dev tools console before running for verbose output
 
+## Installation
+1. Download `.xpi` from releases page
+2. Paste `about:addons` in Firefox address bar
+3. Click the gear icon and select 'Install Add-on From File'
+4. Locate and select the `.xpi` file
+
 ## Usage
 1. Head to billing page (optional: use button in extension)
 2. Scroll to bottom of page (optional: use button in extension)
