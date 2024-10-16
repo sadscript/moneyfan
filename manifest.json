@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "MoneyFans: OF money tracker",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "See how bad your habit really is... Filter by model, or grab a gross total...",
   "host_permissions": [
     "https://onlyfans.com/*"
