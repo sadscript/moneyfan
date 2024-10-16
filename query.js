@@ -76,7 +76,12 @@ function searchTableRows(searchString = '') {
     let top5Models = Object.entries(groupTotals)
         .sort((a, b) => b[1] - a[1])
         .slice(0, 5)
-        .map(([text, total]) => ({name: text, amount: total.toFixed(2)}));
+        .map(([text, total]) => {
+            const anchor = Array.from(document.querySelectorAll('tr td:nth-child(3) a'))
+                .find(a => a.textContent.trim() === text);
+            const url = anchor ? anchor.href : '';
+            return {name: text, amount: total.toFixed(2), url: url};
+        });
 
     window.postMessage({ type: "FROM_PAGE", totalValue: totalPassValue.toFixed(2), top5Models: top5Models }, "*");
 }

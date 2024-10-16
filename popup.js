@@ -23,7 +23,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const top5Container = document.getElementById('top5Models');
     if (request.top5Models) {
       top5Container.innerHTML = '<p>Top 5 Models</p><ul>' + 
-        request.top5Models.map(model => `<li>${model.name}: $${model.amount}</li>`).join('') +
+        request.top5Models.map(model => `<li><a href="${model.url}" target="_blank">${model.name}</a>: $${model.amount}</li>`).join('') +
         '</ul>';
       top5Container.style.display = 'block';
       document.body.style.height = 'auto';  // Allow popup to expand
