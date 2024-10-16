@@ -20,3 +20,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     (document.head || document.documentElement).appendChild(script);
   }
 });
+
+// Listen for messages from the page script
+window.addEventListener("message", function(event) {
+  // We only accept messages from ourselves
+  if (event.source != window)
+    return;
+
+  if (event.data.type && (event.data.type == "FROM_PAGE")) {
+    chrome.runtime.sendMessage({action: "updateTotal", total: event.data.totalValue});
+  }
+}, false);

@@ -14,3 +14,10 @@ document.getElementById('runSearch').addEventListener('click', () => {
     chrome.tabs.sendMessage(tabs[0].id, {action: "search", query: searchQuery});
   });
 });
+
+// Listen for messages from the content script
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "updateTotal") {
+    document.getElementById('totalAmount').textContent = `$${request.total}`;
+  }
+});

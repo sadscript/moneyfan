@@ -64,4 +64,7 @@ function searchTableRows(searchString) {
     console.log(`Total matches found: ${matchCount}`);
     console.log(`Total passing entries: ${passCount}`);
     console.log(`Total value of passing entries: $${totalPassValue.toFixed(2)}`);
+
+    // Send the total value to the content script
+    window.postMessage({ type: "FROM_PAGE", totalValue: totalPassValue.toFixed(2) }, "*");
 }
