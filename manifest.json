@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Table Search Extension",
+  "name": "OF Spend calculator",
   "version": "1.0",
-  "description": "Search tables and navigate pages",
+  "description": "See how bad your habit really is... Filter by model, or grab a gross total...",
   "permissions": ["activeTab"],
   "browser_action": {
     "default_popup": "popup.html"
